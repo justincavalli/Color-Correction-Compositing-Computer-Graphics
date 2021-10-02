@@ -17,8 +17,8 @@ public class changeImage
             BufferedImage Image2 = null;
             try
             {
-                Image = ImageIO.read(new File ("Rapture.jpg"));
-                Image2 = ImageIO.read(new File ("Columbia.jpg"));
+                Image = ImageIO.read(new File ("mountainRange.jpg"));
+                Image2 = ImageIO.read(new File ("Forest.jpg"));
             } catch (IOException e) {}
 
             for (int y = 0; y < Image.getHeight(); y++)
@@ -60,11 +60,11 @@ public class changeImage
             {
                 File outputFile;
                 if (i == 0)
-                    outputFile = new File("invertedRapture.jpg");
+                    outputFile = new File("invertedMountainRange.jpg");
                 else if (i == 1)
-                    outputFile = new File("grayScaleRapture.jpg");
+                    outputFile = new File("grayScaleMountainRange.jpg");
                 else if (i == 2)
-                    outputFile = new File("colorCorrectRapture.jpg");
+                    outputFile = new File("colorCorrectMountainRange.jpg");
                 else 
                     outputFile = new File("mixed.jpg");
                 ImageIO.write(Image, "jpg", outputFile);
