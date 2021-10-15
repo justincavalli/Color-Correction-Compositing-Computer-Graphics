@@ -4,6 +4,7 @@ import java.io.*;
 
 public class changeImage
 {
+    // ints to track the RGB values
     private static int red;
     private static int green;
     private static int blue;
@@ -12,7 +13,7 @@ public class changeImage
     {
         for(int i = 0; i < 4; ++i)
         {
-            // load image
+            // load images
             BufferedImage Image = null;
             BufferedImage Image2 = null;
             try
@@ -58,6 +59,7 @@ public class changeImage
             }
             try
             {
+                // output the generated images
                 File outputFile;
                 if (i == 0)
                     outputFile = new File("invertedMountainRange.jpg");
@@ -74,6 +76,7 @@ public class changeImage
 
     private static void invertImage()
     {
+        // inverts each RGB color
         red = 255 - red;
         green = 255 - green;
         blue = 255 - blue;
@@ -81,18 +84,22 @@ public class changeImage
 
     private static void grayScaleImage()
     {
+        // grayscale works by making all RGB values the same
         green = red;
         blue = red;
     }
 
     private static void colorCorrect()
     {
+        // gain of 2 on the red channel
         red *= 2;
         if (red > 255)
             red = 255;
+        // offset of 50 on the green channel
         green += 50;
         if (green > 255)
             green = 255;
+        // gamma of 2.0 on the blue channel
         blue = (int)Math.pow(blue, 2.0);
         if (blue > 255)
             blue = 255;
